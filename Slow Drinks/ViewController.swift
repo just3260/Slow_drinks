@@ -23,47 +23,34 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer keyJ7HuUvcwB2hicx",
             "Accept": "application/json"
         ]
         
         AF.request(url, method: .get, headers: headers).responseJSON { (response) in
-            print(response)
-            
-            
-//            let decoder = JSONDecoder()
-//            if let loadedPerson = try? decoder.decode(Records.self, from: response) {
-//
-//            }
-            
-            
-//            if response.result.isSuccess {
+
+            let decoder = JSONDecoder()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+            formatter.timeZone = TimeZone.init(identifier: "UTC")
+            formatter.locale = Locale(identifier: "zh_Hant_TW")
+            decoder.dateDecodingStrategy = .formatted(formatter)
+
                 
-                let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-                
-                if let result = response.data, let results = try? decoder.decode(Records.self, from: result) {
+            if let data = response.data {
+                do {
+                    let results = try decoder.decode(Records.self, from: data)
                     for client in results.records {
                         print(client)
                     }
+                } catch {
+                    print("error")
                 }
-//            }
-            
-            
-//            do {
-//                let data = try JSONSerialization.data(withJSONObject:response, options: .prettyPrinted)
-//                let str = String(data:data, encoding: .utf8)
-//                print(str)
-//            } catch {
-//                print("JSON error")
-//            }
+            }
         }
         
-        
     }
-    
     
 }
 

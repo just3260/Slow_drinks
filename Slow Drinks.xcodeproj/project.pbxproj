@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,9 @@
 		4966737B26258D6D00B62622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4966737926258D6D00B62622 /* Main.storyboard */; };
 		4966737D26258D6F00B62622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4966737C26258D6F00B62622 /* Assets.xcassets */; };
 		4966738026258D6F00B62622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4966737E26258D6F00B62622 /* LaunchScreen.storyboard */; };
+		4966738B2625908E00B62622 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4966738A2625908E00B62622 /* Alamofire */; };
+		4966738F262590A300B62622 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4966738E262590A300B62622 /* SnapKit */; };
+		49667392262596B900B62622 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49667391262596B900B62622 /* Client.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,7 @@
 		4966737C26258D6F00B62622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4966737F26258D6F00B62622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4966738126258D6F00B62622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49667391262596B900B62622 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4966738B2625908E00B62622 /* Alamofire in Frameworks */,
+				4966738F262590A300B62622 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,7 @@
 			children = (
 				4966737326258D6D00B62622 /* AppDelegate.swift */,
 				4966737526258D6D00B62622 /* SceneDelegate.swift */,
+				49667391262596B900B62622 /* Client.swift */,
 				4966737726258D6D00B62622 /* ViewController.swift */,
 				4966737926258D6D00B62622 /* Main.storyboard */,
 				4966737C26258D6F00B62622 /* Assets.xcassets */,
@@ -83,6 +90,10 @@
 			dependencies = (
 			);
 			name = "Slow Drinks";
+			packageProductDependencies = (
+				4966738A2625908E00B62622 /* Alamofire */,
+				4966738E262590A300B62622 /* SnapKit */,
+			);
 			productName = "Slow Drinks";
 			productReference = 4966737026258D6D00B62622 /* Slow Drinks.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +121,10 @@
 				Base,
 			);
 			mainGroup = 4966736726258D6D00B62622;
+			packageReferences = (
+				496673892625908E00B62622 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4966738D262590A300B62622 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 4966737126258D6D00B62622 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +154,7 @@
 			files = (
 				4966737826258D6D00B62622 /* ViewController.swift in Sources */,
 				4966737426258D6D00B62622 /* AppDelegate.swift in Sources */,
+				49667392262596B900B62622 /* Client.swift in Sources */,
 				4966737626258D6D00B62622 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +357,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		496673892625908E00B62622 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.2;
+			};
+		};
+		4966738D262590A300B62622 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4966738A2625908E00B62622 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 496673892625908E00B62622 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		4966738E262590A300B62622 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4966738D262590A300B62622 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4966736826258D6D00B62622 /* Project object */;
 }

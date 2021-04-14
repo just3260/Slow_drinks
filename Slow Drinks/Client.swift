@@ -26,7 +26,7 @@ struct Fields: Codable {
 struct Client: Codable {
     var gender: String
     var amount: Int
-    var list: Int
+    var list: Int?
     var item: Int
     
     enum CodingKeys: String, CodingKey {

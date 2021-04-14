@@ -17,7 +17,7 @@ struct Login: Encodable {
 class ViewController: UIViewController {
     
     
-    let url = "https://api.airtable.com/v0/appj0XaBDz5v4Y8OG/Table%201"
+    let airtableUrl = "https://api.airtable.com/v0/appj0XaBDz5v4Y8OG/Table%201"
     
     
     let headers: HTTPHeaders = [
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     func getList() {
         
         
-        AF.request(url, method: .get, headers: headers).responseJSON { (response) in
+        AF.request(airtableUrl, method: .get, headers: headers).responseJSON { (response) in
 
             let decoder = JSONDecoder()
             let formatter = DateFormatter()
@@ -78,19 +78,20 @@ class ViewController: UIViewController {
         let movieBody = RequestBody(records: [.init(fields: .init(gender: "男", amount: 300, list: nil, item: 10))])
         
         
-        let url = URL(string: "https://api.airtable.com/v0/appj0XaBDz5v4Y8OG/Table%201")!
-        var request = URLRequest(url: url)
-        request.setValue("Bearer keyJ7HuUvcwB2hicx", forHTTPHeaderField: "Authorization")
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let encoder = JSONEncoder()
-        request.httpBody = try? encoder.encode(movieBody)
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let data = data,
-               let content = String(data: data, encoding: .utf8) {
-                print(content)
-            }
-        }.resume()
+        if let url = URL(string: airtableUrl) {
+            var request = URLRequest(url: url)
+            request.setValue("Bearer keyJ7HuUvcwB2hicx", forHTTPHeaderField: "Authorization")
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            let encoder = JSONEncoder()
+            request.httpBody = try? encoder.encode(movieBody)
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let data = data,
+                   let content = String(data: data, encoding: .utf8) {
+                    print(content)
+                }
+            }.resume()
+        }
         
     }
     

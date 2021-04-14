@@ -17,9 +17,8 @@ struct Login: Encodable {
 class ViewController: UIViewController {
     
     
-    let listUrl = "https://api.airtable.com/v0/appj0XaBDz5v4Y8OG/Table%201"
+    let url = "https://api.airtable.com/v0/appj0XaBDz5v4Y8OG/Table%201"
     
-    let createUrl = "https://api.airtable.com/v0/appj0XaBDz5v4Y8OG/Table%201"
     
     let headers: HTTPHeaders = [
         "Authorization": "Bearer keyJ7HuUvcwB2hicx",
@@ -37,7 +36,7 @@ class ViewController: UIViewController {
     func getList() {
         
         
-        AF.request(listUrl, method: .get, headers: headers).responseJSON { (response) in
+        AF.request(url, method: .get, headers: headers).responseJSON { (response) in
 
             let decoder = JSONDecoder()
             let formatter = DateFormatter()
@@ -68,12 +67,31 @@ class ViewController: UIViewController {
     
     
     @IBAction func createBtn(_ sender: UIButton) {
-//        let client = Client(gender: "男", amount: 1000, list: nil, item: 10)
-//        let para: [String: AnyObject] = ["records": [client]]
-//            
-//        AF.request(createUrl, method: .post, parameters: <#T##Parameters?#>, headers: headers).responseJSON { (response) in
-//            <#code#>
+//        let userDict = ["fields": ["金額": 300, "品項": 20, "性別": "男"]]
+//
+//        AF.request(listUrl, method: .post, parameters: userDict, headers: headers).responseJSON { (response) in
+//            debug(response)
 //        }
+        
+        
+        
+        let movieBody = RequestBody(records: [.init(fields: .init(gender: "男", amount: 300, list: nil, item: 10))])
+        
+        
+        let url = URL(string: "https://api.airtable.com/v0/appj0XaBDz5v4Y8OG/Table%201")!
+        var request = URLRequest(url: url)
+        request.setValue("Bearer keyJ7HuUvcwB2hicx", forHTTPHeaderField: "Authorization")
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        let encoder = JSONEncoder()
+        request.httpBody = try? encoder.encode(movieBody)
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let data = data,
+               let content = String(data: data, encoding: .utf8) {
+                print(content)
+            }
+        }.resume()
+        
     }
     
     

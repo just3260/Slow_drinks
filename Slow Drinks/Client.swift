@@ -36,3 +36,13 @@ struct Client: Codable {
         case item = "品項"
     }
 }
+
+
+struct Record: Codable {
+    let fields: Client
+}
+
+struct RequestBody: Codable {
+    let records: [Record]
+}
+

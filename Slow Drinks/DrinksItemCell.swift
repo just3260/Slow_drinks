@@ -42,7 +42,9 @@ class DrinksItemCell: UITableViewCell {
     
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
-        let count = Int(sender.value)
-        counter.text = "\(count)"
+        guard let vm = viewModel else {return}
+        
+        vm.counter = Int(sender.value)
+        counter.text = "\(vm.counter)"
     }
 }

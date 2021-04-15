@@ -30,7 +30,7 @@
                                     <action selector="confirmBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rUG-iT-HB1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總計：10000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tj-RE-M7E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總計：0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Tj-RE-M7E">
                                 <rect key="frame" x="30" y="74" width="354" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7LR-8N-d3V"/>

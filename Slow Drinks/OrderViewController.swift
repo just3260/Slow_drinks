@@ -18,6 +18,14 @@ class OrderViewController: UIViewController {
         return OrderViewModel()
     }()
     
+    var amount: Int = 0 {
+        didSet {
+            DispatchQueue.main.async {
+                self.amountLabel.text = "總計：\(self.amount)"
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,6 +91,11 @@ extension OrderViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellVM = viewModel.getCellViewModel(at: indexPath.row)
+        
+        cellVM.updateAmount = { (count) in
+            self.amount = self.amount + count
+        }
+        
         guard let cell = tableview.dequeueReusableCell(withIdentifier: DrinksItemCell.identifier, for: indexPath) as? DrinksItemCell else {
             fatalError("Cell not exists in storyboard")
         }

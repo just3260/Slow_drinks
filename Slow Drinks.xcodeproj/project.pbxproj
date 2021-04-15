@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4917861226282AAD00C76333 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917861126282AAD00C76333 /* APIManager.swift */; };
+		4917861626282C8000C76333 /* DrinksItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917861426282C8000C76333 /* DrinksItemCell.swift */; };
+		4917861726282C8000C76333 /* DrinksItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4917861526282C8000C76333 /* DrinksItemCell.xib */; };
+		4917861B2628346200C76333 /* UIView+SLOW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917861A2628346200C76333 /* UIView+SLOW.swift */; };
+		4917862526283BE400C76333 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917862426283BE400C76333 /* OrderViewModel.swift */; };
+		4917862926283CB600C76333 /* DrinksItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917862826283CB600C76333 /* DrinksItemViewModel.swift */; };
 		4966737426258D6D00B62622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737326258D6D00B62622 /* AppDelegate.swift */; };
 		4966737626258D6D00B62622 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737526258D6D00B62622 /* SceneDelegate.swift */; };
-		4966737826258D6D00B62622 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737726258D6D00B62622 /* ViewController.swift */; };
+		4966737826258D6D00B62622 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737726258D6D00B62622 /* OrderViewController.swift */; };
 		4966737B26258D6D00B62622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4966737926258D6D00B62622 /* Main.storyboard */; };
 		4966737D26258D6F00B62622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4966737C26258D6F00B62622 /* Assets.xcassets */; };
 		4966738026258D6F00B62622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4966737E26258D6F00B62622 /* LaunchScreen.storyboard */; };
@@ -20,10 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4917861126282AAD00C76333 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4917861426282C8000C76333 /* DrinksItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksItemCell.swift; sourceTree = "<group>"; };
+		4917861526282C8000C76333 /* DrinksItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrinksItemCell.xib; sourceTree = "<group>"; };
+		4917861A2628346200C76333 /* UIView+SLOW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SLOW.swift"; sourceTree = "<group>"; };
+		4917862426283BE400C76333 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		4917862826283CB600C76333 /* DrinksItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksItemViewModel.swift; sourceTree = "<group>"; };
 		4966737026258D6D00B62622 /* Slow Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slow Drinks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4966737326258D6D00B62622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4966737526258D6D00B62622 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4966737726258D6D00B62622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4966737726258D6D00B62622 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		4966737A26258D6D00B62622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4966737C26258D6F00B62622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4966737F26258D6F00B62622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -45,6 +57,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		491786192628344A00C76333 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4917861A2628346200C76333 /* UIView+SLOW.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4917861E2628347200C76333 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4966737C26258D6F00B62622 /* Assets.xcassets */,
+				4966737E26258D6F00B62622 /* LaunchScreen.storyboard */,
+				4966738126258D6F00B62622 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4917862226283BB600C76333 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				496673952626A69A00B62622 /* DebugUtils.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4917862326283BCD00C76333 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4917861126282AAD00C76333 /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		4966736726258D6D00B62622 = {
 			isa = PBXGroup;
 			children = (
@@ -67,12 +113,16 @@
 				4966737326258D6D00B62622 /* AppDelegate.swift */,
 				4966737526258D6D00B62622 /* SceneDelegate.swift */,
 				49667391262596B900B62622 /* Client.swift */,
-				4966737726258D6D00B62622 /* ViewController.swift */,
-				496673952626A69A00B62622 /* DebugUtils.swift */,
+				4966737726258D6D00B62622 /* OrderViewController.swift */,
+				4917861426282C8000C76333 /* DrinksItemCell.swift */,
+				4917862826283CB600C76333 /* DrinksItemViewModel.swift */,
+				4917862426283BE400C76333 /* OrderViewModel.swift */,
+				4917861526282C8000C76333 /* DrinksItemCell.xib */,
 				4966737926258D6D00B62622 /* Main.storyboard */,
-				4966737C26258D6F00B62622 /* Assets.xcassets */,
-				4966737E26258D6F00B62622 /* LaunchScreen.storyboard */,
-				4966738126258D6F00B62622 /* Info.plist */,
+				4917862326283BCD00C76333 /* Manager */,
+				4917862226283BB600C76333 /* Utilities */,
+				4917861E2628347200C76333 /* Resources */,
+				491786192628344A00C76333 /* Extension */,
 			);
 			path = "Slow Drinks";
 			sourceTree = "<group>";
@@ -143,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4966738026258D6F00B62622 /* LaunchScreen.storyboard in Resources */,
+				4917861726282C8000C76333 /* DrinksItemCell.xib in Resources */,
 				4966737D26258D6F00B62622 /* Assets.xcassets in Resources */,
 				4966737B26258D6D00B62622 /* Main.storyboard in Resources */,
 			);
@@ -155,10 +206,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4917862926283CB600C76333 /* DrinksItemViewModel.swift in Sources */,
+				4917861226282AAD00C76333 /* APIManager.swift in Sources */,
 				496673962626A69A00B62622 /* DebugUtils.swift in Sources */,
-				4966737826258D6D00B62622 /* ViewController.swift in Sources */,
+				4966737826258D6D00B62622 /* OrderViewController.swift in Sources */,
+				4917862526283BE400C76333 /* OrderViewModel.swift in Sources */,
 				4966737426258D6D00B62622 /* AppDelegate.swift in Sources */,
 				49667392262596B900B62622 /* Client.swift in Sources */,
+				4917861B2628346200C76333 /* UIView+SLOW.swift in Sources */,
+				4917861626282C8000C76333 /* DrinksItemCell.swift in Sources */,
 				4966737626258D6D00B62622 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +364,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7353C93M9;
-				INFOPLIST_FILE = "Slow Drinks/Info.plist";
+				INFOPLIST_FILE = "Slow Drinks/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -328,7 +384,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z7353C93M9;
-				INFOPLIST_FILE = "Slow Drinks/Info.plist";
+				INFOPLIST_FILE = "Slow Drinks/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,6 +7,14 @@
 
 import Foundation
 
+
+enum Gender: String, Codable {
+    case male = "男"
+    case female = "女"
+    case group = "團體"
+}
+
+
 struct Records: Codable {
     var records: [Fields]
 }
@@ -24,7 +32,7 @@ struct Fields: Codable {
 }
 
 struct Client: Codable {
-    var gender: String
+    var gender: Gender
     var amount: Int
     var list: Int?
     var item: Int
@@ -36,13 +44,3 @@ struct Client: Codable {
         case item = "品項"
     }
 }
-
-
-struct Record: Codable {
-    let fields: Client
-}
-
-struct RequestBody: Codable {
-    let records: [Record]
-}
-

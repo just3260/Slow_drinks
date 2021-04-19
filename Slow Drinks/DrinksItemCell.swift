@@ -10,6 +10,7 @@ import UIKit
 class DrinksItemCell: UITableViewCell {
 
     @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var price: UILabel!
     @IBOutlet weak var counter: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
@@ -37,7 +38,10 @@ class DrinksItemCell: UITableViewCell {
         guard let vm = viewModel else {return}
         
         icon.image = vm.image
+        price.text = "售價：\(vm.price)"
         counter.text = "\(vm.counter)"
+        
+        stepper.value = Double(vm.counter)
     }
     
     

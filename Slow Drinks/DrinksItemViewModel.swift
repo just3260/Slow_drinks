@@ -9,24 +9,30 @@ import UIKit
 
 class DrinksItemViewModel {
     
-    var updateAmount: ((_ amount: Int)->())?
+    var updateAmount: (()->())?
     
     var counter: Int = 0 {
         didSet {
-            amount = counter * 100
+            amount = counter * price
         }
     }
     
     var amount: Int = 0 {
         didSet {
-            self.updateAmount?(amount)
+            self.updateAmount?()
         }
     }
     
+    var price: Int
     var image: UIImage
     
-    init(image: UIImage) {
+    init(price: Int, image: UIImage) {
+        self.price = price
         self.image = image
+    }
+    
+    func resetData() {
+        counter = 0
     }
 }
 

@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -30,21 +31,31 @@
                         </connections>
                     </stepper>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-F9-iOp">
-                        <rect key="frame" x="130" y="20" width="150" height="60"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="130" y="57" width="150" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" systemColor="systemYellowColor"/>
                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="售價：150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-99-Mhf">
+                        <rect key="frame" x="130" y="15" width="150" height="22"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" systemColor="systemBlueColor"/>
+                        <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hfn-c4-ifB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2QX-zQ-YSs"/>
                     <constraint firstItem="cS1-F9-iOp" firstAttribute="leading" secondItem="CMm-bm-sRV" secondAttribute="trailing" constant="30" id="Adm-Fi-AG1"/>
                     <constraint firstAttribute="bottom" secondItem="CMm-bm-sRV" secondAttribute="bottom" constant="10" id="E8X-gS-ENq"/>
-                    <constraint firstAttribute="bottom" secondItem="cS1-F9-iOp" secondAttribute="bottom" constant="20" id="Kdx-o0-pNM"/>
                     <constraint firstItem="CMm-bm-sRV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RM8-Xu-Olj"/>
-                    <constraint firstItem="cS1-F9-iOp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="axf-dS-OOe"/>
+                    <constraint firstItem="cS1-F9-iOp" firstAttribute="top" secondItem="NW2-99-Mhf" secondAttribute="bottom" constant="20" id="XTb-cP-ebg"/>
+                    <constraint firstItem="NW2-99-Mhf" firstAttribute="leading" secondItem="CMm-bm-sRV" secondAttribute="trailing" constant="30" id="aq3-ot-fL5"/>
                     <constraint firstAttribute="trailing" secondItem="hfn-c4-ifB" secondAttribute="trailing" constant="20" id="c9O-7j-mUj"/>
+                    <constraint firstItem="hfn-c4-ifB" firstAttribute="leading" secondItem="NW2-99-Mhf" secondAttribute="trailing" constant="20" id="fUU-nM-pFh"/>
+                    <constraint firstItem="NW2-99-Mhf" firstAttribute="height" secondItem="cS1-F9-iOp" secondAttribute="height" multiplier="0.792453" id="fms-4j-iVU"/>
+                    <constraint firstAttribute="bottom" secondItem="cS1-F9-iOp" secondAttribute="bottom" constant="15" id="nX4-7V-nRi"/>
                     <constraint firstItem="CMm-bm-sRV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="pgg-sg-xPK"/>
+                    <constraint firstItem="NW2-99-Mhf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="sby-1H-IDC"/>
                     <constraint firstItem="hfn-c4-ifB" firstAttribute="leading" secondItem="cS1-F9-iOp" secondAttribute="trailing" constant="20" id="x8r-EK-2u6"/>
                 </constraints>
             </tableViewCellContentView>
@@ -52,9 +63,18 @@
             <connections>
                 <outlet property="counter" destination="cS1-F9-iOp" id="uCf-Rv-9VY"/>
                 <outlet property="icon" destination="CMm-bm-sRV" id="58B-pW-0HG"/>
+                <outlet property="price" destination="NW2-99-Mhf" id="O6M-Q9-In9"/>
                 <outlet property="stepper" destination="hfn-c4-ifB" id="cLO-9G-y6f"/>
             </connections>
             <point key="canvasLocation" x="215.21739130434784" y="189.50892857142856"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

@@ -46,6 +46,9 @@
                                     <segment title="女"/>
                                     <segment title="團體"/>
                                 </segments>
+                                <connections>
+                                    <action selector="genderPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Q2j-fn-sUV"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4nd-uD-fQF">
                                 <rect key="frame" x="0.0" y="205" width="414" height="577"/>

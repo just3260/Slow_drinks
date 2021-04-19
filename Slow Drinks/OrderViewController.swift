@@ -43,7 +43,6 @@ class OrderViewController: UIViewController {
     
     func setupUI() {
         tableview.allowsSelection = false
-        
         confirmBtn.roundCorner(radius: confirmBtn.frame.height/2)
     }
     
@@ -53,6 +52,12 @@ class OrderViewController: UIViewController {
         viewModel.reloadTableView = { [weak self] () in
             DispatchQueue.main.async {
                 self?.tableview.reloadData()
+            }
+        }
+        
+        viewModel.showSuccess = { [weak self] () in
+            DispatchQueue.main.async {
+                self?.showSuccessMessage()
             }
         }
         
@@ -67,9 +72,27 @@ class OrderViewController: UIViewController {
     
     // MARK: - Button click
     
-    @IBAction func confirmBtnPressed(_ sender: UIButton) {
-        viewModel.createData()
+    
+    @IBAction func genderPressed(_ sender: UISegmentedControl) {
+        viewModel.setGenderType(at: sender.selectedSegmentIndex)
     }
+    
+    @IBAction func confirmBtnPressed(_ sender: UIButton) {
+        viewModel.sendOrder()
+    }
+    
+    
+    // MARK: - privacy method
+    
+    func showSuccessMessage() {
+        
+        let alertController = UIAlertController(title: "新增成功！！", message: "test~~~~~~~~~", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "確定", style: .default, handler: { (action) in
+            self.viewModel.resetCounter()
+        }))
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -92,8 +115,8 @@ extension OrderViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellVM = viewModel.getCellViewModel(at: indexPath.row)
         
-        cellVM.updateAmount = { (count) in
-            self.amount = self.amount + count
+        cellVM.updateAmount = { [weak self] () in
+            self?.amount = self?.viewModel.getTotalAmount() ?? 0
         }
         
         guard let cell = tableview.dequeueReusableCell(withIdentifier: DrinksItemCell.identifier, for: indexPath) as? DrinksItemCell else {

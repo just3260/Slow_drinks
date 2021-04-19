@@ -12,7 +12,10 @@ class OrderViewModel {
     let apiManager: APIManager
     
     var reloadTableView: (()->())?
+    var showSuccess: (()->())?
     var handleError: ((_ errorCode: Int, _ errorMessage: String)->())?
+    
+    var gender: Gender = .male
     
     private var orderViewModels: [DrinksItemViewModel] = [DrinksItemViewModel]() {
         didSet {
@@ -24,11 +27,11 @@ class OrderViewModel {
         self.apiManager = apiManager
         
         if let image = UIImage.init(systemName: "person") {
-            orderViewModels = [ DrinksItemViewModel(image: image),
-                                DrinksItemViewModel(image: image),
-                                DrinksItemViewModel(image: image),
-                                DrinksItemViewModel(image: image),
-                                DrinksItemViewModel(image: image) ]
+            orderViewModels = [ DrinksItemViewModel(price: 100, image: image),
+                                DrinksItemViewModel(price: 150, image: image),
+                                DrinksItemViewModel(price: 200, image: image),
+                                DrinksItemViewModel(price: 120, image: image),
+                                DrinksItemViewModel(price: 180, image: image) ]
         }
     }
     
@@ -44,8 +47,40 @@ class OrderViewModel {
         orderViewModels[index] = viewModel
     }
     
-    func createData() {
-        apiManager.createData()
+    func sendOrder() {
+        let order = Client(gender: gender,
+                           sesame: getCellViewModel(at: 0).counter,
+                           latte: getCellViewModel(at: 1).counter,
+                           plumWine: getCellViewModel(at: 2).counter,
+                           teaGin: getCellViewModel(at: 3).counter,
+                           tea: getCellViewModel(at: 4).counter,
+                           amount: getTotalAmount())
+        
+        apiManager.createData(with: order) { (success) in
+            if success {
+                self.showSuccess?()
+            }
+        }
+    }
+    
+    func getTotalAmount() -> Int {
+        var amount = 0
+        orderViewModels.forEach { (vm) in
+            amount += vm.amount
+        }
+        return amount
+    }
+    
+    func setGenderType(at index: Int) {
+        gender = Gender.init(rawValue: index) ?? .male
+    }
+    
+    func resetCounter() {
+        orderViewModels.forEach { (vm) in
+            vm.counter = 0
+        }
+        self.reloadTableView?()
     }
 }
+
 

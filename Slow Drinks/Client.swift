@@ -8,10 +8,21 @@
 import Foundation
 
 
-enum Gender: String, Codable {
-    case male = "男"
-    case female = "女"
-    case group = "團體"
+enum Gender: Int, Codable {
+    case male = 0
+    case female
+    case group
+    
+    func toString() -> String {
+        switch self {
+        case .male:
+            return "男"
+        case .female:
+            return "女"
+        case .group:
+            return "團體"
+        }
+    }
 }
 
 
@@ -32,15 +43,23 @@ struct Fields: Codable {
 }
 
 struct Client: Codable {
-    var gender: Gender
-    var amount: Int
     var list: Int?
-    var item: Int
+    var gender: Gender
+    var sesame: Int
+    var latte: Int
+    var plumWine: Int
+    var teaGin: Int
+    var tea: Int
+    var amount: Int
     
     enum CodingKeys: String, CodingKey {
-        case gender = "性別"
-        case amount = "金額"
         case list = "List"
-        case item = "品項"
+        case gender = "性別"
+        case sesame = "心亂如麻"
+        case latte = "極白乳韻"
+        case plumWine = "美莓"
+        case teaGin = "茶琴"
+        case tea = "冷泡茶"
+        case amount = "總金額"
     }
 }

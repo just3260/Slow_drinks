@@ -42,6 +42,14 @@ class OrderViewController: UIViewController {
     // MARK: - Layout
     
     func setupUI() {
+        view.backgroundColor = .slowBackground
+        tableview.backgroundColor = .slowBackground
+        confirmBtn.backgroundColor = .slowButton
+        confirmBtn.setTitleColor(.slowTitle, for: .normal)
+        genderSegment.backgroundColor = .slowSubButton
+        genderSegment.selectedSegmentTintColor = .slowButton
+        amountLabel.textColor = .slowTitle
+        
         tableview.allowsSelection = false
         confirmBtn.roundCorner(radius: confirmBtn.frame.height/2)
     }

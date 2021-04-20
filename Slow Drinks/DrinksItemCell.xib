@@ -33,7 +33,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cS1-F9-iOp">
                         <rect key="frame" x="130" y="57" width="150" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" systemColor="systemYellowColor"/>
+                        <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="highlightedColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="售價：150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NW2-99-Mhf">
@@ -43,6 +43,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="1" green="0.83137254901960778" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="hfn-c4-ifB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2QX-zQ-YSs"/>
                     <constraint firstItem="cS1-F9-iOp" firstAttribute="leading" secondItem="CMm-bm-sRV" secondAttribute="trailing" constant="30" id="Adm-Fi-AG1"/>
@@ -72,9 +73,6 @@
     <resources>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -26,13 +26,11 @@ class OrderViewModel {
     init(_ apiManager: APIManager = APIManager.sharedInstance) {
         self.apiManager = apiManager
         
-        if let image = UIImage.init(systemName: "person") {
-            orderViewModels = [ DrinksItemViewModel(price: 100, image: image),
-                                DrinksItemViewModel(price: 150, image: image),
-                                DrinksItemViewModel(price: 200, image: image),
-                                DrinksItemViewModel(price: 120, image: image),
-                                DrinksItemViewModel(price: 180, image: image) ]
-        }
+        orderViewModels = [ DrinksItemViewModel(price: 200, image: UIImage(named: "sesame")!),
+                            DrinksItemViewModel(price: 150, image: UIImage(named: "latte")!),
+                            DrinksItemViewModel(price: 160, image: UIImage(named: "plumWine")!),
+                            DrinksItemViewModel(price: 180, image: UIImage(named: "teaGin")!),
+                            DrinksItemViewModel(price: 65, image: UIImage(named: "tea")!) ]
     }
     
     func numberOfCells() -> Int {

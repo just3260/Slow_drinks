@@ -24,7 +24,13 @@ class DrinksItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        contentView.backgroundColor = .slowBackground
+        stepper.backgroundColor = .slowButton
+        stepper.roundCorner(radius: 5)
+        icon.roundCorner(radius: 5)
+        price.textColor = .slowTitle
+        counter.textColor = .slowSubTitle
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

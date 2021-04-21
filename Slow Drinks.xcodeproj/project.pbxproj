@@ -14,6 +14,9 @@
 		4917862526283BE400C76333 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917862426283BE400C76333 /* OrderViewModel.swift */; };
 		4917862926283CB600C76333 /* DrinksItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917862826283CB600C76333 /* DrinksItemViewModel.swift */; };
 		493A5A8D262EBE4100CB6397 /* UIColor+SLOW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5A8C262EBE4100CB6397 /* UIColor+SLOW.swift */; };
+		493A5A93263015B400CB6397 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5A92263015B400CB6397 /* LoadingView.swift */; };
+		493A5A96263015EB00CB6397 /* UIViewController+SLOW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5A95263015EB00CB6397 /* UIViewController+SLOW.swift */; };
+		493A5A99263016F200CB6397 /* UIAlertController+SLOW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5A98263016F200CB6397 /* UIAlertController+SLOW.swift */; };
 		4966737426258D6D00B62622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737326258D6D00B62622 /* AppDelegate.swift */; };
 		4966737626258D6D00B62622 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737526258D6D00B62622 /* SceneDelegate.swift */; };
 		4966737826258D6D00B62622 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737726258D6D00B62622 /* OrderViewController.swift */; };
@@ -34,6 +37,9 @@
 		4917862426283BE400C76333 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		4917862826283CB600C76333 /* DrinksItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksItemViewModel.swift; sourceTree = "<group>"; };
 		493A5A8C262EBE4100CB6397 /* UIColor+SLOW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+SLOW.swift"; sourceTree = "<group>"; };
+		493A5A92263015B400CB6397 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		493A5A95263015EB00CB6397 /* UIViewController+SLOW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SLOW.swift"; sourceTree = "<group>"; };
+		493A5A98263016F200CB6397 /* UIAlertController+SLOW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+SLOW.swift"; sourceTree = "<group>"; };
 		4966737026258D6D00B62622 /* Slow Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slow Drinks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4966737326258D6D00B62622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4966737526258D6D00B62622 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 			children = (
 				4917861A2628346200C76333 /* UIView+SLOW.swift */,
 				493A5A8C262EBE4100CB6397 /* UIColor+SLOW.swift */,
+				493A5A95263015EB00CB6397 /* UIViewController+SLOW.swift */,
+				493A5A98263016F200CB6397 /* UIAlertController+SLOW.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -82,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				496673952626A69A00B62622 /* DebugUtils.swift */,
+				493A5A92263015B400CB6397 /* LoadingView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -214,10 +223,13 @@
 				496673962626A69A00B62622 /* DebugUtils.swift in Sources */,
 				4966737826258D6D00B62622 /* OrderViewController.swift in Sources */,
 				4917862526283BE400C76333 /* OrderViewModel.swift in Sources */,
+				493A5A99263016F200CB6397 /* UIAlertController+SLOW.swift in Sources */,
+				493A5A93263015B400CB6397 /* LoadingView.swift in Sources */,
 				4966737426258D6D00B62622 /* AppDelegate.swift in Sources */,
 				49667392262596B900B62622 /* Client.swift in Sources */,
 				493A5A8D262EBE4100CB6397 /* UIColor+SLOW.swift in Sources */,
 				4917861B2628346200C76333 /* UIView+SLOW.swift in Sources */,
+				493A5A96263015EB00CB6397 /* UIViewController+SLOW.swift in Sources */,
 				4917861626282C8000C76333 /* DrinksItemCell.swift in Sources */,
 				4966737626258D6D00B62622 /* SceneDelegate.swift in Sources */,
 			);

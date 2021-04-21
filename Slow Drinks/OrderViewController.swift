@@ -22,6 +22,8 @@ class OrderViewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
                 self.amountLabel.text = "總計：\(self.amount)"
+                self.confirmBtn.isEnabled = self.amount != 0
+                self.confirmBtn.backgroundColor = self.amount == 0 ? .slowButtonDisable : .slowButton
             }
         }
     }
@@ -44,14 +46,17 @@ class OrderViewController: UIViewController {
     func setupUI() {
         view.backgroundColor = .slowBackground
         tableview.backgroundColor = .slowBackground
-        confirmBtn.backgroundColor = .slowButton
-        confirmBtn.setTitleColor(.slowTitle, for: .normal)
+        tableview.allowsSelection = false
+        
         genderSegment.backgroundColor = .slowSubButton
         genderSegment.selectedSegmentTintColor = .slowButton
+        
         amountLabel.textColor = .slowTitle
         
-        tableview.allowsSelection = false
+        confirmBtn.backgroundColor = .slowButtonDisable
+        confirmBtn.setTitleColor(.slowTitle, for: .normal)
         confirmBtn.roundCorner(radius: confirmBtn.frame.height/2)
+        confirmBtn.isEnabled = false
     }
     
     
@@ -68,13 +73,6 @@ class OrderViewController: UIViewController {
                 self?.showSuccessMessage()
             }
         }
-        
-        viewModel.handleError = { [weak self] (errorCode, errorMessage) in
-            DispatchQueue.main.async {
-//                self?.hideLoading()
-//                self?.delegate?.showError(errorCode, errorMessage)
-            }
-        }
     }
     
     
@@ -86,6 +84,7 @@ class OrderViewController: UIViewController {
     }
     
     @IBAction func confirmBtnPressed(_ sender: UIButton) {
+        showLoading()
         viewModel.sendOrder()
     }
     
@@ -93,14 +92,13 @@ class OrderViewController: UIViewController {
     // MARK: - privacy method
     
     func showSuccessMessage() {
-        
-        let alertController = UIAlertController(title: "新增成功！！", message: "test~~~~~~~~~", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "確定", style: .default, handler: { (action) in
+        let alert = UIAlertController.okAlert(title: "新增成功！！", message: "") { (action) in
             self.viewModel.resetCounter()
-        }))
-        self.present(alertController, animated: true, completion: nil)
+            self.genderSegment.selectedSegmentIndex = 0
+            self.hideLoading()
+        }
+        self.present(alert, animated: true, completion: nil)
     }
-    
 }
 
 

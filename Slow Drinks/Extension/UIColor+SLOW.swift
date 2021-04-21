@@ -29,19 +29,22 @@ extension UIColor {
     
     
     @nonobjc class var slowBackground: UIColor {
-        return UIColor(rgb: 0x393C40)
+        return #colorLiteral(red: 0.2235294118, green: 0.2352941176, blue: 0.2509803922, alpha: 1)
     }
     @nonobjc class var slowButton: UIColor {
-        return UIColor(rgb: 0xBF9673)
+        return #colorLiteral(red: 0.7490196078, green: 0.5882352941, blue: 0.4509803922, alpha: 1)
+    }
+    @nonobjc class var slowButtonDisable: UIColor {
+        return #colorLiteral(red: 0.7490196078, green: 0.5882352941, blue: 0.4509803922, alpha: 0.3)
     }
     @nonobjc class var slowSubButton: UIColor {
-        return UIColor(rgb: 0xF2CA99)
+        return #colorLiteral(red: 0.9490196078, green: 0.7921568627, blue: 0.6, alpha: 1)
     }
     @nonobjc class var slowTitle: UIColor {
-        return UIColor(rgb: 0xF2E7AE)
+        return #colorLiteral(red: 0.9490196078, green: 0.9058823529, blue: 0.6823529412, alpha: 1)
     }
     @nonobjc class var slowSubTitle: UIColor {
-        return UIColor(rgb: 0xF2F2F2)
+        return #colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)
     }
     
     

@@ -17,6 +17,10 @@
 		493A5A93263015B400CB6397 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5A92263015B400CB6397 /* LoadingView.swift */; };
 		493A5A96263015EB00CB6397 /* UIViewController+SLOW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5A95263015EB00CB6397 /* UIViewController+SLOW.swift */; };
 		493A5A99263016F200CB6397 /* UIAlertController+SLOW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A5A98263016F200CB6397 /* UIAlertController+SLOW.swift */; };
+		4943F84D2636AC4800C6F804 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 4943F84C2636AC4800C6F804 /* Moya */; };
+		4943F84F2636AC4800C6F804 /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 4943F84E2636AC4800C6F804 /* ReactiveMoya */; };
+		4943F8512636AC4800C6F804 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 4943F8502636AC4800C6F804 /* RxMoya */; };
+		4943F8542636AD3000C6F804 /* Airtable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4943F8532636AD3000C6F804 /* Airtable.swift */; };
 		4966737426258D6D00B62622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737326258D6D00B62622 /* AppDelegate.swift */; };
 		4966737626258D6D00B62622 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737526258D6D00B62622 /* SceneDelegate.swift */; };
 		4966737826258D6D00B62622 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966737726258D6D00B62622 /* OrderViewController.swift */; };
@@ -40,6 +44,7 @@
 		493A5A92263015B400CB6397 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		493A5A95263015EB00CB6397 /* UIViewController+SLOW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SLOW.swift"; sourceTree = "<group>"; };
 		493A5A98263016F200CB6397 /* UIAlertController+SLOW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+SLOW.swift"; sourceTree = "<group>"; };
+		4943F8532636AD3000C6F804 /* Airtable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airtable.swift; sourceTree = "<group>"; };
 		4966737026258D6D00B62622 /* Slow Drinks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Slow Drinks.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4966737326258D6D00B62622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4966737526258D6D00B62622 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,8 +62,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4943F8512636AC4800C6F804 /* RxMoya in Frameworks */,
 				4966738B2625908E00B62622 /* Alamofire in Frameworks */,
+				4943F84F2636AC4800C6F804 /* ReactiveMoya in Frameworks */,
 				4966738F262590A300B62622 /* SnapKit in Frameworks */,
+				4943F84D2636AC4800C6F804 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				4917861126282AAD00C76333 /* APIManager.swift */,
+				4943F8532636AD3000C6F804 /* Airtable.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -158,6 +167,9 @@
 			packageProductDependencies = (
 				4966738A2625908E00B62622 /* Alamofire */,
 				4966738E262590A300B62622 /* SnapKit */,
+				4943F84C2636AC4800C6F804 /* Moya */,
+				4943F84E2636AC4800C6F804 /* ReactiveMoya */,
+				4943F8502636AC4800C6F804 /* RxMoya */,
 			);
 			productName = "Slow Drinks";
 			productReference = 4966737026258D6D00B62622 /* Slow Drinks.app */;
@@ -189,6 +201,7 @@
 			packageReferences = (
 				496673892625908E00B62622 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4966738D262590A300B62622 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4943F84B2636AC4800C6F804 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 4966737126258D6D00B62622 /* Products */;
 			projectDirPath = "";
@@ -219,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4917862926283CB600C76333 /* DrinksItemViewModel.swift in Sources */,
+				4943F8542636AD3000C6F804 /* Airtable.swift in Sources */,
 				4917861226282AAD00C76333 /* APIManager.swift in Sources */,
 				496673962626A69A00B62622 /* DebugUtils.swift in Sources */,
 				4966737826258D6D00B62622 /* OrderViewController.swift in Sources */,
@@ -437,6 +451,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4943F84B2636AC4800C6F804 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
 		496673892625908E00B62622 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -456,6 +478,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4943F84C2636AC4800C6F804 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4943F84B2636AC4800C6F804 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		4943F84E2636AC4800C6F804 /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4943F84B2636AC4800C6F804 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		4943F8502636AC4800C6F804 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4943F84B2636AC4800C6F804 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		4966738A2625908E00B62622 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 496673892625908E00B62622 /* XCRemoteSwiftPackageReference "Alamofire" */;

@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import Moya
 
 class APIManager {
     static let sharedInstance = APIManager()
@@ -48,10 +49,39 @@ class APIManager {
     
     
     func createData(with order: Client, completion: @escaping (_ success: Bool) -> Void) {
-        let userDict = ["fields": ["總金額": order.amount, "心亂如麻": order.sesame, "極白乳韻": order.latte, "美莓": order.plumWine, "茶琴": order.teaGin, "冷泡茶": order.tea, "性別": order.gender.toString()]]
+//        let userDict = ["fields": ["總金額": order.amount, "心亂如麻": order.sesame, "極白乳韻": order.latte, "美莓": order.plumWine, "茶琴": order.teaGin, "冷泡茶": order.tea, "性別": order.gender.toString()]]
         
-        AF.request(baseUrl, method: .post, parameters: userDict, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-            completion(response.response?.statusCode == 200)
+//        AF.request(baseUrl, method: .post, parameters: userDict, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+//
+//            if let data = response.data {
+//                do {
+//                    let result = try JSONDecoder().decode(TestFields.self, from: data)
+//                    debug(result)
+//                } catch {
+//                    debug(error)
+//                }
+//            }
+//            completion(response.response?.statusCode == 200)
+//        }
+        
+        
+        MoyaProvider<Airtable>().request(.createRecords(withOrder: order)) { (result) in
+            switch result {
+            case let .success(response):
+                
+                do {
+                    let result = try JSONDecoder().decode(TestFields.self, from: response.data)
+                    debug(result)
+                } catch {
+                    debug(error)
+                }
+                completion(true)
+                
+            case let .failure(error):
+                completion(false)
+            }
         }
+        
+        
     }
 }

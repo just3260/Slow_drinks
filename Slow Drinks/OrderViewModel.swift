@@ -46,7 +46,8 @@ class OrderViewModel {
     }
     
     func sendOrder() {
-        let order = Client(gender: gender,
+        let order = Client(list: nil,
+                           gender: gender,
                            sesame: getCellViewModel(at: 0).counter,
                            latte: getCellViewModel(at: 1).counter,
                            plumWine: getCellViewModel(at: 2).counter,
@@ -70,7 +71,14 @@ class OrderViewModel {
     }
     
     func setGenderType(at index: Int) {
-        gender = Gender.init(rawValue: index) ?? .male
+        switch index {
+        case 1:
+            gender = .female
+        case 2:
+            gender = .group
+        default:
+            gender = .male
+        }
     }
     
     func resetCounter() {

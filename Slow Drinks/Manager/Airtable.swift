@@ -47,7 +47,7 @@ extension Airtable: TargetType {
         case .getRecords:
             return .requestPlain
         case .createRecords(withOrder: let order):
-            let userDict = ["fields": ["總金額": order.amount, "心亂如麻": order.sesame, "極白乳韻": order.latte, "美莓": order.plumWine, "茶琴": order.teaGin, "冷泡茶": order.tea, "性別": order.gender.toString()]]
+            let userDict = ["fields": ["總金額": order.amount, "心亂如麻": order.sesame, "極白乳韻": order.latte, "美莓": order.plumWine, "茶琴": order.teaGin, "冷泡茶": order.tea, "性別": order.gender.rawValue]]
             return .requestParameters(parameters: userDict, encoding: JSONEncoding.default)
         }
     }

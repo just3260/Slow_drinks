@@ -49,13 +49,14 @@ class APIManager {
     
     
     func createData(with order: Client, completion: @escaping (_ success: Bool) -> Void) {
+        
 //        let userDict = ["fields": ["總金額": order.amount, "心亂如麻": order.sesame, "極白乳韻": order.latte, "美莓": order.plumWine, "茶琴": order.teaGin, "冷泡茶": order.tea, "性別": order.gender.toString()]]
         
 //        AF.request(baseUrl, method: .post, parameters: userDict, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
 //
 //            if let data = response.data {
 //                do {
-//                    let result = try JSONDecoder().decode(TestFields.self, from: data)
+//                    let result = try JSONDecoder().decode(Fields.self, from: data)
 //                    debug(result)
 //                } catch {
 //                    debug(error)
@@ -70,14 +71,15 @@ class APIManager {
             case let .success(response):
                 
                 do {
-                    let result = try JSONDecoder().decode(TestFields.self, from: response.data)
+                    let result = try JSONDecoder().decode(Fields.self, from: response.data)
                     debug(result)
                 } catch {
                     debug(error)
                 }
-                completion(true)
+                completion(response.statusCode == 200)
                 
             case let .failure(error):
+                debug(error)
                 completion(false)
             }
         }

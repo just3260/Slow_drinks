@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Moya
+import RxSwift
+import RxMoya
 
 class OrderViewModel {
     
     let apiManager: APIManager
+    
+    let bag = DisposeBag()
     
     var reloadTableView: (()->())?
     var showSuccess: (()->())?
@@ -23,7 +28,7 @@ class OrderViewModel {
         }
     }
     
-    init(_ apiManager: APIManager = APIManager.sharedInstance) {
+    init(_ apiManager: APIManager = APIManager.shared) {
         self.apiManager = apiManager
         
         orderViewModels = [ DrinksItemViewModel(price: 200, image: UIImage(named: "sesame")!),
@@ -55,11 +60,23 @@ class OrderViewModel {
                            tea: getCellViewModel(at: 4).counter,
                            amount: getTotalAmount())
         
-        apiManager.createData(with: order) { (success) in
-            if success {
+//        apiManager.createData(with: order) { (success) in
+//            if success {
+//                self.showSuccess?()
+//            }
+//        }
+        
+        apiManager.request(Airtable.CreateRecords(order: order))
+            .subscribe { (result) in
+                debug(result)
                 self.showSuccess?()
+            } onError: { (error) in
+                if let error = error as? MoyaError, let errorMessage = try? error.response?.mapJSON() {
+                    print(errorMessage)
+                }
             }
-        }
+            .disposed(by: bag)
+        
     }
     
     func getTotalAmount() -> Int {

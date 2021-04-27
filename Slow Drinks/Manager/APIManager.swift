@@ -65,8 +65,7 @@ class APIManager {
 //            completion(response.response?.statusCode == 200)
 //        }
         
-        
-        MoyaProvider<Airtable>().request(.createRecords(withOrder: order)) { (result) in
+        MoyaProvider<Airtable.CreateRecords>().request(.init(order: order)) { (result) in
             switch result {
             case let .success(response):
                 
